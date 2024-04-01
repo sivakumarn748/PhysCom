@@ -1,0 +1,26 @@
+fieldset {
+    font-family: monospace;
+    border-radius: 1em;
+    font-size: large;
+}
+
+legend {
+    font-weight: bold;
+}
+
+form {
+    display: grid;
+    grid-gap: 2em;
+}
+
+#question {
+    width: 90%;
+}
+
+input[type="submit"] {
+    width: 100%;
+}
+
+input {
+    font-family: monospace;
+}

@@ -1,0 +1,66 @@
+{% extends "outline.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    <link href="{% static 'stylesheets/signup.css' %}" rel="stylesheet" type="text/css"/>
+    <fieldset>
+    <legend>User Details</legend>
+    <form action='/app/signup/' method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="inputelements">
+            <label for="name">User Name : </label>       
+            <input type="text" name="name" minlength="8" maxlength="15" id="name" required='true'/>
+        </div>
+        <div class="inputelements">
+            <label for="userid">User Id : </label>
+            <input type="text" minlength="8" maxlength="15" name="userid"  id="userid" required='true'/>
+            <span id="idexists"></span>
+        </div>
+        <div class="inputelements">
+            <label for="password">Password : </label>
+            <input type="password" minlength="8" maxlength="15" name="password"  id="password" required='true'/>
+        </div>
+        <div class="inputelements">
+            <label for="email">Email Id : </label>       
+            <input type="email" name="email" id="email"/>
+        </div>
+        <div class="inputelements">
+            <label for="phone">Phone Number : </label>   
+            <input type="tel" name="phone" id="phone"/>
+        </div>
+        <div class="inputelements">
+            <label for="bio">About yourself : </label>   
+            <input type="text" name="bio" id="bio"/>
+        </div>
+        <div class="inputelements">
+            <label for="dob">Date of Birth : </label>    
+            <input type="date" name="dob" id="dob" required="true"/>
+        </div>
+        <div class="inputelements">
+            <label for="profile">Profile Image : </label>
+            <input type="file" name="profile" accept="image/*" id="profile"/>
+        </div>
+        <div class="inputelements">
+            <label for="question">Write a question and give answer to recover password in case of emergency<br>(e.g. Favorite Food ?)</label><br>
+            <input type="text" name="question" id="question" required="true" maxlength="255"/> ?<br>
+        </div>
+        <div class="inputelements">
+            <label for="answer">Answer : </label>
+            <input type="text" name="answer" required="true" id="answer" max="255"/>
+        </div>
+
+        <div class="inputelements">
+            <center><input type="submit" name="submit" value="SignUp"/></center>
+        </div>
+    </form>
+    </fieldset>
+
+    <script>
+        document.getElementsByTagName('form')[0].reset();
+    </script>
+
+    <script src="{% static 'javascripts/signup.js' %}" type="text/javascript"></script>
+
+{% endblock content %}

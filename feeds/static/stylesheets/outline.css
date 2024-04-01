@@ -1,0 +1,121 @@
+body {
+    border: 0px;
+    margin: 0px;
+}
+
+#menu {
+    position: fixed;
+    left: 100vw;
+    top: 7.5vh;
+    height: 92.5vh;
+    width: 60vw;
+    background-color: #321997;
+}
+
+#menu > div{
+    width: 75%;
+    color: white;
+    text-align: right;
+    font-size: 1.25em;
+    font-family: monospace;
+    padding: 1em;
+}
+
+#menu > div:hover{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#menu > div > a {
+    color: white;
+    text-decoration: none;
+}
+
+#navigation-bar{
+    position: fixed;
+    width: 100%;
+    height: 7.5vh;
+    border: 0px;
+    padding: 0px;
+    background-color: #321997;
+    display: grid;
+    grid-template-columns: 0.1fr 0.8fr 0.1fr;
+}
+
+#title-card {
+	color: white;
+	font-weight: bold;
+	font-family: monospace;
+	font-size: 2.5em;
+	justify-self: center;
+	align-self: center;
+}
+
+#menu-button {
+    padding-left: .5em;
+}
+
+#menu-button * {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+}
+
+#menu-button > label {
+    width: 100%;
+    height: 100%;
+}
+
+#menu-button > label > svg {
+    fill: white;
+    width: 2em;
+    height: 2em;
+}
+
+#user-icon {    
+    align-self: center;
+    justify-self: right;
+}
+
+#user-icon > img {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    border: solid 0.15em white;
+}
+
+#page-content {
+    background-color: #f5f4ff70;
+    padding-inline: 0em;
+    padding-top: 4em;
+}
+
+.menuopen {
+    animation-name: menu-open;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+
+.menuclose {
+    animation-name: menu-close;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes menu-open {
+    0% {
+        left: 100vw;
+    }
+    100% {
+        left: 40vw;
+    }
+}
+
+@keyframes menu-close {
+    0% {
+        left: 40vw;
+    }
+    100% {
+        left: 100vw;
+    }
+}

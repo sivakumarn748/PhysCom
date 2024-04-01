@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{field}}</title>
+    <link href="{% static 'stylesheets/activities.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="caption">
+        <label><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg></label>
+        <label>{{field | title}}</label>
+    </div>
+    <div id="elements">
+        <div>
+            <div class="follow-profile">
+                <img src='/api/userprofile?userid=SIVAKUMAR' />
+            </div>
+            <div class="follow-data">
+                <div class="follow-username">sivakumar</div>
+                <div class="follow-userid">sivakumar</div>
+                <label>Follow</label>
+            </div>
+            <div class="follow-about">M. Sc. Student</div>
+        </div>
+        <div>
+            <div class="follow-profile">
+                <img src='/api/userprofile?userid=SIVAKUMAR' />
+            </div>
+            <div class="follow-data">
+                <div class="follow-username">sivakumar</div>
+                <div class="follow-userid">sivakumar</div>
+                <label>Follow</label>
+            </div>
+            <div class="follow-about">M. Sc. Student</div>
+        </div>
+        <div>
+            <div class="follow-profile">
+                <img src='/api/userprofile?userid=SIVAKUMAR' />
+            </div>
+            <div class="follow-data">
+                <div class="follow-username">sivasdfasdfsadfsadfakumar</div>
+                <div class="follow-userid">sivakumar</div>
+                <label>Follow</label>
+            </div>
+            <div class="follow-about">M. Sc. Studentkdfjkfjsdfjhsalkjhaslkdjhflaskhflkjhasfjlhsadfkhasldfhasdlsdf</div>
+        </div>
+        <div>
+            <div class="follow-profile">
+                <img src='/api/userprofile?userid=SIVAKUMAR' />
+            </div>
+            <div class="follow-data">
+                <div class="follow-username">sivakumar</div>
+                <div class="follow-userid">sivakukkjslkfjl;asdjflsadflkmar</div>
+                <label>Follow</label>
+            </div>
+            <div class="follow-about">M. Sc. Student</div>
+        </div>
+    </div>
+</body>
+
+<script>/*
+    {% if field == 'following' or field == 'followers' %}
+    function renderNextN(userid, field, s, n) {
+        var url = `/api/${userid}/${field}?s=${s}&n=${n}`;
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        
+        xhr.onreadystatechange = function(event) {
+            resp = xhr.responseText;
+            var node = `
+                <div>
+                    <div class="follow-profile">
+                        <img src='/api/userprofile?userid=${userid}' />
+                    </div>
+                    <div class="follow-data">
+                        <div class="follow-username">${username}</div>
+                        <div class="follow-userid">${userid}</div>
+                        <label>Follow</label>
+                    </div>
+                </div>`;
+            alert(resp);
+        }
+    
+        xhr.send();
+    }
+    {% elif field == 'posts' %}
+    {% elif field == 'replies' %}
+    {% elif field == 'media' %}
+    {% elif field == 'likes' %}
+    {% endif %}*/
+</script>
+
+</html>

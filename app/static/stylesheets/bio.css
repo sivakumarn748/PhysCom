@@ -1,0 +1,96 @@
+#page-content {
+    display: grid;
+    grid-template-rows: 0.30fr 0.30fr 0.15fr 0.15fr;
+    align-content: space-between;
+    grid-gap: 1em;
+    font-family: verdana;
+}
+
+#page-content > div {
+    margin-inline: 1em;
+}
+
+#primary-info {
+    display: grid;
+    grid-template-columns: 0.75fr 0.25fr;
+}
+
+#primary-info > div:nth-child(2) > label{
+    font-size: 1em;
+    padding-inline: 1em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    background-color: black;
+    color: white;
+    border-radius: 1em;
+}
+
+#profile {
+    width: 100%;
+    padding-inline-start: 1em;
+}
+
+#profile > img {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    border: solid 2px black;
+    padding: 2px;
+}
+
+#user > div {
+    padding-top: .50em;
+}
+
+#user > div:nth-child(1) {
+    font-weight: bold;
+    padding-inline-start: 1em;
+    color: #321997;
+}
+
+#user > div:nth-child(2) > span {
+    color: #321997;
+}
+
+#user > div:nth-child(2) {
+    font-style: italic;
+    font-weight: lighter;
+    padding-inline-start: 1em;
+}
+
+#sec-info > label {
+    font-weight: bold;
+    border-left: solid 3px #321997;
+    border-radius: 3px;
+    padding-left: 1em;
+    color: #321997;
+}
+
+#sec-info > p {
+    font-weight: lighter;
+    padding-inline-start: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#follow-info {
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    justify-items: center;
+}
+
+#activity-info {
+display: grid;
+    grid-template-columns: repeat(4, .25fr);
+    justify-items: center;
+}
+
+#follow-info span, #activity-info span {
+    padding-inline: .5em;
+    background-color: #321997;
+    color: white;
+    border-radius: 1em;
+}

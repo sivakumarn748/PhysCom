@@ -1,0 +1,24 @@
+#elements > div {
+    border-bottom: solid 1px black;
+    padding-block: 1em;
+    display: grid;
+    grid-template-columns: .2fr .8fr;
+  }
+  
+  .follow-data {
+    display: grid;
+    grid-template-columns: .3fr .3fr .3fr;
+  }
+  
+  .follow-data * {
+    padding-inline: 1em;
+    overflow: hidden;
+  }
+  
+  img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    padding: 2px;
+    border: solid 1px black;
+  }

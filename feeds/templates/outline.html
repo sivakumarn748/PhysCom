@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'stylesheets/outline.css' %}" rel="stylesheet" type="text/css"/>
+    {% block head %}
+    {% endblock head %}
+</head>
+<body>
+
+    <script>
+        function userid() {
+            if (localStorage.userid) {
+                return localStorage.userid;
+            }
+            else return false;
+        }
+    </script>
+
+    <div id="menu">
+        <div id="menu-home">
+            <label>Home</label>
+        </div>
+        <div id="menu-community">
+            <a href="{% url "community:feed" %}"><label>Community</label></a>
+        </div>
+        <div id="menu-room">
+            <label>Discussion Room</label>
+        </div>
+        <div id="menu-schedule">
+            <label>Events</label>
+        </div>
+        <div id="menu-native">
+            <span>A</span>
+            <span>I</span>
+        </div>
+        <div>
+            <a href="{% url "app:login" %}"><label>Login/Signup</label></a>
+        </div>
+    </div>
+    
+    <div id="navigation-bar">
+        <div id="menu-button">
+            <label>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>
+            </label>
+        </div>
+        <div id="title-card">
+            <label>PhysCom</label>
+        </div>
+        <div id="user-icon">
+            {% block userprofile %}
+                
+            {% endblock userprofile %}
+        </div>
+    </div>
+    <div id="page-content">
+        {% block content %}
+            <!--  All contents are rendered here.  -->
+        {% endblock content %}
+    </div>
+
+    <script src="{% static "javascripts/outline.js" %}" type="text/javascript"></script>
+
+</body>
+</html>

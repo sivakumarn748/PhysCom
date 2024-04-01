@@ -1,0 +1,45 @@
+{% extends "outline.html" %}
+
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+    <link href="{% static "stylesheets/bio.css" %}" rel="stylesheet" type="text/css" />
+
+    <div id="primary-info">
+        <div>
+            <div id="profile">
+                <img src="{% url "api:userprofile" %}?userid={{user.userid}}" />
+            </div>
+            <div id="user">
+                <div>{{user.name}}</div>
+                <div><span>@</span> {{user.userid}}</div>
+            </div>
+        </div>
+        <div>
+            <label id="followBtn">Follow</label>
+        </div>
+    </div>
+    <div id="sec-info">
+        <label>About</label>
+        <p>{{user.about}}</p>
+        <br>
+        <label>Last Used</label>
+        <p>{{user.lastseen | naturalday}}
+    </div>
+    <div id="follow-info">
+        <label id="Following"><a href="{% url 'app:activities' user.userid 'following' %}">Following <span>{{user.follows.count}}</span></a></label>
+        <label id="Followers"><a href="{% url 'app:activities' user.userid 'followers' %}">Followers <span>{{user.following.count}}</span></a></label>
+    </div>
+
+    <div id="activity-info">
+        <label id="Posts"><a href="{% url 'app:activities' user.userid 'posts' %}">Posts <span>{{NoOfPost}}</span></a></label>
+        <label id="Replies"><a href="{% url 'app:activities' user.userid 'replies' %}">Replies <span>{{NoOfReplies}}</span></a></label>
+        <label id="Media"><a href="{% url 'app:activities' user.userid 'media' %}">Media <span>{{NoOfMedia}}</span></a></label>
+        <label id="Likes"><a href="{% url 'app:activities' user.userid 'likes' %}">Likes <span>{{NoOfLikes}}</span></a></label>
+    </div>
+
+    <script src="{% static "javascripts/bio.js" %}" type="text/javascript"></script>
+
+{% endblock content %}
